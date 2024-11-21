@@ -8,12 +8,12 @@ import com.revrobotics.CANSparkMax;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class moter extends SubsystemBase {
+public class Moter extends SubsystemBase {
   /** Creates a new moter. */
   int x = 0;
   CANSparkMax motter = new CANSparkMax(14, CANSparkMax.MotorType.kBrushless);
   CANSparkMax motter2 = new CANSparkMax(15, CANSparkMax.MotorType.kBrushless);
-  public moter() {}
+  public Moter() {}
 
   public void runMoter() {
     motter.set(0.35);
