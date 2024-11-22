@@ -7,6 +7,7 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.stopCommand;
 import frc.robot.subsystems.Moter;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
@@ -23,9 +24,11 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 public class RobotContainer {
   Joystick joystick = new Joystick(0);
   JoystickButton button = new JoystickButton(joystick, 2);
+  JoystickButton stop = new JoystickButton(joystick, 3);
   // The robot's subsystems and commands are defined here...
   private final Moter motter = new Moter();
   ExampleCommand exampleComand = new ExampleCommand(motter);
+  stopCommand stopCommand = new stopCommand(motter);
   // Replace with CommandPS4Controller or CommandJoystick if needed
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
@@ -45,6 +48,7 @@ public class RobotContainer {
    */
   private void configureBindings() {
     button.onTrue(exampleComand);
+    stop.onTrue(stopCommand);
   }
 
 }
