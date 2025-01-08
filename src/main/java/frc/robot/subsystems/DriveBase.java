@@ -23,11 +23,11 @@ public class DriveBase extends SubsystemBase {
     backLeft.set(x);
     backRight.set(x);
   }
-  public void driveForward(){
-    setDriveSpeed(.35);
+  public void driveForward(double x){
+    setDriveSpeed(x);
   }
-  public void driveBackwards(){
-    setDriveSpeed(-.35);
+  public void driveBackwards(double x){
+    setDriveSpeed(-x);
   }
   @Override
   public void periodic() {
